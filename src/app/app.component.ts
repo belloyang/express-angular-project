@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HarvesterApiService } from '../services/harvester-api.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-angular-express-project';
+  constructor(public harvesterApiService: HarvesterApiService){}
+  
 }
