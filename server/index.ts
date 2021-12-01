@@ -4,19 +4,21 @@
  import * as dotenv from "dotenv";
  import * as express from "express";
  import * as apiRouter from './routes/api';
-
+ import * as path from 'path';
 /**
  * App Variables
  */
- dotenv.config();
+ dotenv.config({
+    path: path.join(__dirname, '.env')
+  });
  if (!process.env.PORT) {
-    process.exit(1);
+   process.exit(1);
  }
  
  const PORT: number = parseInt(process.env.PORT as string, 10);
 
  const app = express();
- app.use(express.static('../dist/my-angular-express-project'));
+ app.use(express.static(path.join(__dirname, '../dist/my-angular-express-project')));
 
 /**
  *  App Configuration
