@@ -10,7 +10,11 @@
   <mat-card-content>
      <button mat-button (click)="harvesterApiService.list()">list</button>
   </mat-card-content>
-  
+  <mat-card-content>
+    <p>Digitizer Path: <input type="text" [(ngModel)]="libPath" /></p>
+    <button mat-button (click)="harvesterApiService.get_digitizer_info(libPath)">get_digitizer_info</button>
+    
+ </mat-card-content>
 </mat-card>
 
 <router-outlet></router-outlet>

@@ -8,6 +8,7 @@ import { HarvesterApiService } from '../services/harvester-api.service';
 })
 export class AppComponent {
   title = 'my-angular-express-project';
+  libPath = "";
   constructor(public harvesterApiService: HarvesterApiService){}
   
 }

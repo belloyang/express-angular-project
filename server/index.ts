@@ -19,7 +19,9 @@
 
  const app = express();
  app.use(express.static(path.join(__dirname, '../dist/my-angular-express-project')));
-
+ app.use(express.json());
+ app.use(express.urlencoded({ extended: true }));
+ 
 /**
  *  App Configuration
  */

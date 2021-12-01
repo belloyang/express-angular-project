@@ -19,4 +19,16 @@ export class HarvesterApiService {
     });
 
   }
+
+  toUrlString(str: string) {
+    return str.replace(/\//g, "%2F");
+  }
+
+  get_digitizer_info(libPath: string) {
+    console.log('get_digitizer_info', libPath);
+    this.http.get(SERVER_BASE_URL + `/api/get_digitizer_info/${this.toUrlString(libPath)}`)
+    .subscribe((data) => {
+      console.log('receive data', data);
+    });
+  }
 }

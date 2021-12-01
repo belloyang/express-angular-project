@@ -101,7 +101,7 @@ router.get('/get_digitizer_info/:libPath', (req, res) => {
 
                     console.log('get_digitizer_info completed');
                     return res.send({
-                        api: 'list',
+                        api: 'get_digitizer_info',
                         ret: digitizerInfo
                     });
                   }
@@ -122,7 +122,7 @@ router.get('/get_digitizer_info/:libPath', (req, res) => {
                     console.error(`System Error (EC: ${errorInfo.error_code}), get_digitizer_info aborted. \n${errorInfo.description}`);
                     // await this.harvesterApiService.abort(execId);
                     return res.send({
-                        api: 'list',
+                        api: 'get_digitizer_info',
                         ret: new Error(`System Error(EC: ${errorInfo.error_code}): ${errorInfo.description}`)
                     });
                   }
@@ -143,5 +143,10 @@ router.get('/get_digitizer_info/:libPath', (req, res) => {
       }, 1000);
 });
 
+//curl -X POST -H "Content-Type:application/json" http://localhost:4201/api/harvest_data -d '{"libpath":"/disk/", "params": }'
+router.post('/harvest_data', (req, res) => {
+    console.log('/api/harvest_data', req.body.libPath, req.body.params, req.body.updateStep);
+
+});
 
 export = router;
