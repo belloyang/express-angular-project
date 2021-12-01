@@ -17,4 +17,17 @@
  </mat-card-content>
 </mat-card>
 
+<mat-card>
+  <mat-card-title> Harvest Data </mat-card-title>
+  <div>
+    Harvest From: <input type="text" [(ngModel)]="harvestDatetime.from"/>
+    Harvest To: <input type="text" [(ngModel)]="harvestDatetime.to"/>
+  </div>
+  <div>
+    Output Directory: <input type="text" [(ngModel)]="outputDir"/>
+    Output Pattern: <input type="text" [(ngModel)]="outputPattern"/>
+  </div>
+  <button mat-button (click)="harvestData()">Harvest</button>
+</mat-card>
+
 <router-outlet></router-outlet>

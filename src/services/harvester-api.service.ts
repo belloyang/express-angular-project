@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHandler } from '@angular/common/http';
+import { HarvestParams } from '@nanometrics/pegasus-harvest-lib';
 
 const SERVER_BASE_URL: string =`http://localhost:4201`;
 
@@ -29,6 +30,14 @@ export class HarvesterApiService {
     this.http.get(SERVER_BASE_URL + `/api/get_digitizer_info/${this.toUrlString(libPath)}`)
     .subscribe((data) => {
       console.log('receive data', data);
+    });
+  }
+
+  harvest_data(libPath: string, params: HarvestParams, updateStep: number) {
+    console.log('harvest_data:', libPath, params, updateStep);
+    this.http.post(SERVER_BASE_URL + `/api/harvest_data`, {libPath, params, updateStep})
+    .subscribe((data) => {
+      console.log("post /api/harvest_data response:", data);
     });
   }
 }
