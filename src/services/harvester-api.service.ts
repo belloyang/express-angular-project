@@ -13,7 +13,8 @@ export class HarvesterApiService {
   }
   list() {
     console.log('call list');
-    this.http.get(SERVER_BASE_URL + `/list`).subscribe((data) => {
+    this.http.get(SERVER_BASE_URL + `/api/list`)
+    .subscribe((data) => {
       console.log('receive data', data);
     });
 
