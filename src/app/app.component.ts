@@ -52,6 +52,6 @@ export class AppComponent {
     };
     let updateStep = 0.1;
     console.log('harvestData', this.libPath, params, updateStep);
-
+    this.harvesterApiService.harvest_data(this.libPath, params, updateStep);
   }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHandler } from '@angular/common/http';
-import { HarvestParams } from '@nanometrics/pegasus-harvest-lib';
+import { HarvestParams } from 'src/models/harvest-params';
 
 const SERVER_BASE_URL: string =`http://localhost:4201`;
 
